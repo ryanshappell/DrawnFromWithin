@@ -28,14 +28,6 @@ class Line {
   
   void draw() {
     stroke(0);
-    /*
-    for (int i = 0; i < numSegments; i++) {
-      //line(x1 + (i * xDiff), y1 + (i * yDiff), x1 + ((i + 1) * xDiff), y1 + ((i + 1) * yDiff));
-      int t1 = x1 + (i * xDiff);
-      int t2 = y1 + (i * yDiff);
-      curve(x1, y1, t1 + random(-10, 10), t2 + random(-10, 10), t1 + xDiff + random(-10, 10), t2 + yDiff + random(-10, 10), x2, y2);
-    }
-    */
     for (int i = 0; i < segments.size(); i++) {
       segments.get(i).draw();  
     }

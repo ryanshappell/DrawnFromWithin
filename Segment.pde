@@ -7,6 +7,13 @@ class Segment {
   float y2;
   float cx2;
   float cy2;
+  float weight;
+  int red;
+  int green;
+  int blue;
+  int fillR;
+  int fillG;
+  int fillB;
   
   public Segment(float cx1, float cy1, float x1, float y1, float x2, float y2, float cx2, float cy2) {
     this.cx1 = cx1;
@@ -17,10 +24,21 @@ class Segment {
     this.y2 = y2;
     this.cx2 = cx2;
     this.cy2 = cy2;
+    
+    weight = random(0, 5);
+    red = (int) random(1, 256);
+    green = (int) random(1, 256);
+    blue = (int) random(1, 256);
+    fillR = (int) random(1, 256);
+    fillG = (int) random(1, 256);
+    fillB = (int) random(1, 256);
   }
   
   //Draws the segment
   void draw() {
+    strokeWeight(weight);
+    stroke(red, green, blue);
+    fill(fillR, fillG, fillB);
     curve(cx1, cy1, x1, y1, x2, y2, cx2, cy2);
   }
 }

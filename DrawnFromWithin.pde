@@ -19,13 +19,14 @@ void setup(){
 }
 
 //THINGS TO VARY
-//FILL COLOR
-//LINE COLOR
-//BACKGROUND COLOR
+//BACKGROUND COLOR (based on camera?)
+//X FILL COLOR (currently by segment)
+//X STROKE COLOR (currently by segment)
+//X STROKE WEIGHT (currently by segment)
 void draw(){
-  background(255);
-  fill(100, 0, 100);
+  background(0);
   for (int i = 0; i < lines.size(); i++) {
+    strokeWeight(1);
     //lines.get(i).drawTest();
     lines.get(i).draw();
   }
