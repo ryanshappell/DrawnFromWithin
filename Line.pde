@@ -8,6 +8,10 @@ class Line {
   float yDiff;
   ArrayList<Segment> segments;
   
+  int red;
+  int green;
+  int blue;
+  
   public Line(float x1, float y1, float x2, float y2) {
     this.x1 = x1;
     this.y1 = y1;
@@ -19,6 +23,10 @@ class Line {
     yDiff = (y2 - y1) / numSegments;
     segments = new ArrayList<Segment>();
     createSegments();
+    
+    red = (int) random(1, 256);
+    green = (int) random(1, 256);
+    blue = (int) random(1, 256);
   }
   
   void drawTest() {
@@ -27,7 +35,7 @@ class Line {
   }
   
   void draw() {
-    stroke(0);
+    stroke(red, green, blue);
     for (int i = 0; i < segments.size(); i++) {
       segments.get(i).draw();  
     }
