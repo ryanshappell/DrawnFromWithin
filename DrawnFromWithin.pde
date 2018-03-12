@@ -27,7 +27,7 @@ void setup(){
 //X STROKE WEIGHT (currently by segment)
 void draw(){
   if (!initialized) {
-    background(100);
+    background(0);
     setupScreen();
   } else {
     if (cap.available()) {
@@ -35,7 +35,6 @@ void draw(){
     }
     test = cap;
     
-    background(0);
     for (int i = 0; i < lines.size(); i++) {
       strokeWeight(1);
       //lines.get(i).drawTest();
@@ -48,6 +47,9 @@ void draw(){
 //FIXXXXXXXXX
 void setupScreen() {
   textAlign(CENTER);
+  textSize(50);
+  text("Drawn From Within", width / 2, height / 2 - 200);
+  textSize(10);
   text("Please Enter Your Name", width / 2, height / 2);
   text(seed, width / 2, height / 2 + 20);
   println(seed);
@@ -75,7 +77,7 @@ void keyReleased() {
 //Creates line segments from the given file
 void createLines() {
   String[] sets;
-  sets = loadStrings("sun.txt");
+  sets = loadStrings("indian.txt");
   for (int i = 0; i < sets.length; i++) {
     String[] pieces = split(sets[i], ", ");
     for (int j = 0; j < pieces.length - 2; j += 2) {
