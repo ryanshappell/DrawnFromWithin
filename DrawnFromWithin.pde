@@ -75,7 +75,7 @@ void keyReleased() {
 //Creates line segments from the given file
 void createLines() {
   String[] sets;
-  sets = loadStrings("fish.txt");
+  sets = loadStrings("sun.txt");
   for (int i = 0; i < sets.length; i++) {
     String[] pieces = split(sets[i], ", ");
     for (int j = 0; j < pieces.length - 2; j += 2) {

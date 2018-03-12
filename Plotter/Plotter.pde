@@ -27,6 +27,13 @@ void keyReleased() {
       lastY = -1;
     }
   }
+  if (key == 'v') {
+    if (drawing) {
+      currentLines = "";
+      lastX = -1;
+      lastY = -1;
+    }
+  }
   if (key == 't') {
     if (!drawing) {
       String[] file = new String[lineSets.size()];

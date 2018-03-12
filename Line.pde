@@ -49,8 +49,8 @@ class Line {
     float lastX = x1;
     float lastY = y1;
     for (int i = 0; i < numSegments; i++) {
-      int xRand = (int) random(-(l/10), l/10);
-      int yRand = (int) random(-(l/10), l/10);
+      int xRand = (int) random(-(l/8), l/8);
+      int yRand = (int) random(-(l/8), l/8);
       segments.add(new Segment(x1, y1, lastX, lastY, x1 + (i + 1) * xDiff + xRand, y1 + (i + 1) * yDiff + yRand, x2, y2));
       lastX = x1 + (i + 1) * xDiff + xRand;
       lastY = y1 + (i + 1) * yDiff + yRand;
