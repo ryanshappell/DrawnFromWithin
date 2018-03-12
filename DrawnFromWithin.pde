@@ -2,6 +2,7 @@ import processing.video.*;
 
 //Setup
 boolean initialized = false;
+PFont bodoni;
 
 //Name of person
 String seed = "";
@@ -18,6 +19,7 @@ void setup(){
   cap = new Capture(this, 800, 600);
   cap.start();
   lines = new ArrayList<Line>();
+  bodoni = createFont("Bodoni.ttf", 16);
 }
 
 //THINGS TO VARY
@@ -46,11 +48,17 @@ void draw(){
 //The setup screen which asks for the users name and takes their picture
 //FIXXXXXXXXX
 void setupScreen() {
+  textFont(bodoni);
   textAlign(CENTER);
   textSize(50);
+  fill(255);
   text("Drawn From Within", width / 2, height / 2 - 200);
-  textSize(10);
-  text("Please Enter Your Name", width / 2, height / 2);
+  stroke(255);
+  line(100, height / 2 - 195, 600, height / 2 - 195);
+  textSize(20);
+  text("Please Enter Your Name:", width / 2, height / 2);
+  rect(width / 2 - 125, height / 2 + 10, 250, 20);
+  fill(0);
   text(seed, width / 2, height / 2 + 20);
   println(seed);
 }
@@ -68,6 +76,7 @@ void keyReleased() {
       }      
     } else {
       initialized = true;
+      background(0);
       randomSeed(convertSeed(seed));
       createLines();
     }
