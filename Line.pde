@@ -29,11 +29,13 @@ class Line {
     blue = (int) random(1, 256);
   }
   
+  //Draws the original straight lines without randomization
   void drawTest() {
     stroke(255, 0, 0);
     line(x1, y1, x2, y2);
   }
   
+  //Draws each segment of the line
   void draw() {
     stroke(red, green, blue);
     for (int i = 0; i < segments.size(); i++) {
@@ -42,15 +44,14 @@ class Line {
   }
   
   //Creates segments for the line
+  //Randomized the curviness of each segment according to it's length
   void createSegments() {
-    
-    //make xRand and yRand scale according to line length????
-    float l = (float) Math.sqrt(Math.pow(x2-x1, 2) + Math.pow(y2-y1, 2));
+    float dist = (float) Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
     float lastX = x1;
     float lastY = y1;
     for (int i = 0; i < numSegments; i++) {
-      int xRand = (int) random(-(l/8), l/8);
-      int yRand = (int) random(-(l/8), l/8);
+      int xRand = (int) random(-(dist / 8), dist / 8);
+      int yRand = (int) random(-(dist / 8), dist / 8);
       segments.add(new Segment(x1, y1, lastX, lastY, x1 + (i + 1) * xDiff + xRand, y1 + (i + 1) * yDiff + yRand, x2, y2));
       lastX = x1 + (i + 1) * xDiff + xRand;
       lastY = y1 + (i + 1) * yDiff + yRand;

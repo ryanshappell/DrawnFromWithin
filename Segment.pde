@@ -28,7 +28,7 @@ class Segment {
     fillB = (int) random(1, 256);
   }
   
-  //Draws the segment
+  //Draws the segment with random weight and fill color
   void draw() {
     strokeWeight(weight);
     fill(fillR, fillG, fillB);
