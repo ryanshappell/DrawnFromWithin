@@ -91,7 +91,7 @@ void createLines() {
   }
   
   String[] sets;
-  sets = loadStrings(images[(int) random(0, 4)]);
+  sets = loadStrings(images[(int) random(0, 4));
   for (int i = 0; i < sets.length; i++) {
     String[] pieces = split(sets[i], ", ");
     for (int j = 0; j < pieces.length - 2; j += 2) {

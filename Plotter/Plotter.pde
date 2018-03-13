@@ -40,7 +40,7 @@ void keyReleased() {
       for (int i = 0; i < lineSets.size(); i++) {
         file[i] = lineSets.get(i);
       }
-      saveStrings("fish.txt", file);
+      saveStrings("test.txt", file);
     }
   }
 }
